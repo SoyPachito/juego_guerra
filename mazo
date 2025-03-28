@@ -45,12 +45,44 @@ VALORES_CARTAS = {
     'Q': 12,  
     'K': 13,  
     'A': 14,  
-    'joker de 1': 15,
-    'joker de 2': 15
+    'joker' : 15,
 }
 
-# Función para obtener el valor de una carta
+#  obtener el valor de una carta
 def obtener_valor(carta):
-    # Extraer el valor (lo que está antes de " de ")
-    valor = carta.split()[0]
+    # extraemos la primera parte del nombre de la carta
+    parte = carta.split()[0]
+    
+    if parte in VALORES_CARTAS:
+        return VALORES_CARTAS[parte]
+    
+
+# Mezclar el mazo
+random.shuffle(mazo)
+
+# Dividir el mazo
+mitad = len(mazo) // 2
+jugador1 = mazo[:mitad]
+jugador2 = mazo[mitad:]
+
+# Seleccionar una carta aleatoria de cada jugador
+carta_jugador1 = random.choice(jugador1)
+carta_jugador2 = random.choice(jugador2)
+
+# Obtener los valores de las cartas
+valor1 = obtener_valor(carta_jugador1)
+valor2 = obtener_valor(carta_jugador2)
+
+# Mostrar las cartas seleccionadas
+print("\n=== CARTA ALEATORIA DE CADA JUGADOR ===")
+print(f"Jugador 1: {carta_jugador1} (Valor: {valor1})")
+print(f"Jugador 2: {carta_jugador2} (Valor: {valor2})")
+
+# comparacion y resultado
+if valor1 > valor2:
+    print("\n-> El Jugador 1 tiene la carta más alta")
+elif valor2 > valor1:
+    print("\n-> El Jugador 2 tiene la carta más alta")
+else:
+    print("\n-> Mismo valor (¡GUERRA!)")
 
