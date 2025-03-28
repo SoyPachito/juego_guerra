@@ -1,0 +1,56 @@
+import random
+
+# Mazo de cartas 
+mazo = [
+    # Corazones 
+    'A de ♥', '2 de ♥', '3 de ♥', '4 de ♥',
+    '5 de ♥', '6 de ♥', '7 de ♥', '8 de ♥',
+    '9 de ♥', '10 de ♥', 'J de ♥', 'Q de ♥',
+    'K de ♥',
+    
+    # Diamantes 
+    'A de ♦', '2 de ♦', '3 de ♦', '4 de ♦',
+    '5 de ♦', '6 de ♦', '7 de ♦', '8 de ♦',
+    '9 de ♦', '10 de ♦', 'J de ♦', 'Q de ♦',
+    'K de ♦',
+    
+    # Tréboles 
+    'A de ♣', '2 de ♣', '3 de ♣', '4 de ♣',
+    '5 de ♣', '6 de ♣', '7 de ♣', '8 de ♣',
+    '9 de ♣', '10 de ♣', 'J de ♣', 'Q de ♣',
+    'K de ♣',
+    
+    # Picas 
+    'A de ♠', '2 de ♠', '3 de ♠', '4 de ♠',
+    '5 de ♠', '6 de ♠', '7 de ♠', '8 de ♠',
+    '9 de ♠', '10 de ♠', 'J de ♠', 'Q de ♠',
+    'K de ♠',
+    
+    # Comodines 
+    'joker de 1', 'joker de 2'
+]
+
+# Módulo de jerarquía de cartas
+VALORES_CARTAS = {
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
+    '10': 10,
+    'J': 11,  
+    'Q': 12,  
+    'K': 13,  
+    'A': 14,  
+    'joker de 1': 15,
+    'joker de 2': 15
+}
+
+# Función para obtener el valor de una carta
+def obtener_valor(carta):
+    # Extraer el valor (lo que está antes de " de ")
+    valor = carta.split()[0]
+
