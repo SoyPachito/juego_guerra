@@ -1,5 +1,7 @@
 import random
 
+
+
 # Mazo de cartas 
 mazo = [
     # Corazones 
